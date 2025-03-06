@@ -1,0 +1,30 @@
+# Core dependencies
+numpy>=1.23.0
+opencv-python>=4.6.0
+pillow>=9.2.0
+PyYAML>=6.0
+requests>=2.28.0
+pyserial>=3.5
+schedule>=1.1.0  # For scheduled tasks
+
+# UI related
+pygame>=2.1.0
+
+# Barcode/RFID
+pyzbar>=0.1.9
+
+# Testing
+pytest>=7.1.0
+
+# Optional dependencies (Raspberry Pi specific)
+# These will be installed on the actual Raspberry Pi
+# RPi.GPIO==0.7.1
+# picamera>=1.13
+# spidev>=3.5
+# adafruit-circuitpython-ads1x15>=2.2.0
+# adafruit-circuitpython-hx711>=1.0.0
+# adafruit-circuitpython-bme280>=2.6.0
+# paho-mqtt>=1.6.0
+# kivy>=2.1.0
+# luma.oled>=3.12.0
+# mfrc522>=0.0.7 

@@ -1,0 +1,83 @@
+###################################
+# Smart Kart Configuration File #
+###################################
+
+system:
+  name: "Smart Kart"
+  version: "0.1.0"
+  debug: false
+  log_level: "INFO"
+  simulation: false
+
+hardware:
+  weight_sensor:
+    enabled: true
+    type: "hx711"
+    dout_pin: 5
+    sck_pin: 6
+    reference_unit: 1  # Calibration value - needs to be determined with testing
+    offset: 0
+    threshold: 10  # Minimum weight difference to detect (in grams)
+  
+  barcode_scanner:
+    enabled: true
+    type: "camera"  # 'camera' (PiCamera) or 'usb' (USB camera)
+    device: "/dev/video0"  # For USB camera
+    timeout: 5
+  
+  rfid_reader:
+    enabled: true
+    type: "mfrc522"
+    spi_bus: 0
+    spi_device: 0
+    reset_pin: 25
+  
+  camera:
+    enabled: true
+    resolution: [640, 480]
+    framerate: 30
+    rotation: 0
+  
+  display:
+    enabled: true
+    type: "lcd"  # 'lcd' or 'oled'
+    width: 800
+    height: 480
+    rotation: 0
+  
+  audio:
+    enabled: true
+    volume: 80
+  
+  button:
+    enabled: true
+    pins: [17, 18, 19]  # GPIO pins for buttons
+
+network:
+  wifi:
+    enabled: true
+    ssid: ""  # Set your WiFi SSID
+    password: ""  # Set your WiFi password
+  
+  bluetooth:
+    enabled: false
+  
+  api:
+    enabled: true
+    host: "0.0.0.0"
+    port: 5000
+
+features:
+  ingredient_verification:
+    enabled: true
+    confidence_threshold: 0.7  # Minimum confidence for ingredient recognition
+  
+  weight_verification:
+    enabled: true
+    tolerance: 0.1  # 10% tolerance for weight verification
+
+paths:
+  data: "data"
+  audio: "assets/audio"
+  images: "assets/images"
+  models: "models" 
